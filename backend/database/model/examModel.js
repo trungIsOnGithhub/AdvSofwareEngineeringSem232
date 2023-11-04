@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 import ExamSchema from "../schema/examSchema.js";
 
-module.exports = mongoose.model("Exam", ExamSchema);
+export default mongoose.model("Exam", ExamSchema);
