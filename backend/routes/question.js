@@ -4,7 +4,8 @@ import Question from '../database/model/questionModel.js';
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-    res.json(await Question.find().lean().exec());
+    const questions = await Question.find().lean().exec();
+    res.status(200).json(questions);
 });
 
 router.get('/:id', async (req, res) => {
@@ -21,7 +22,6 @@ router.get('/:id', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-    // Check if req.body is an array
     const questions = await Question.create(req.body);
     try {
         await questions.save();
@@ -38,7 +38,7 @@ router.put('/:id', async (req, res) => {
         const question = await Question.findByIdAndUpdate(
             req.params.id,
             req.body,
-            { new: true }
+            { upsert: true, new: true, setDefaultsOnInsert: true }
         ).lean().exec();
         res.status(200).json(question);
     }
@@ -50,8 +50,8 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
     try {
-        const question = await Question.findByIdAndDelete(req.params.id).lean().exec();
-        res.status(200).json(question);
+        await Question.findByIdAndDelete(req.params.id).lean().exec();
+        res.status(200);
     }
     catch (err) {
         console.log(err);
