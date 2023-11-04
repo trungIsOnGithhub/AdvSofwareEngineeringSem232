@@ -9,6 +9,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+const examRoute = require("./routes/exam");
+
+app.use('/api/exam', examRoute);
+
 mongoose.connect(process.env.MONGO_URL)
     .then(() => {
         const PORT = process.env.PORT || 8800;
