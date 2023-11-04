@@ -7,5 +7,14 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Backend on port ${PORT}`))
+mongoose.connect(process.env.MONGO_URL)
+    .then(() => {
+        const PORT = process.env.PORT || 8800;
+        console.log("Connect to MongoDB");
+        app.listen(PORT, () => {
+            console.log(`Backend is running on port ${PORT}`);
+        })
+    })
+    .catch(err => {
+        console.log(err);
+    })
