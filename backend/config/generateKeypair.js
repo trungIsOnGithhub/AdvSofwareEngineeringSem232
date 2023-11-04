@@ -1,4 +1,4 @@
-require("dotenv").config();
+import "dotenv/config.js";
 import fs from 'fs';
 import crypto from 'node:crypto';
 
