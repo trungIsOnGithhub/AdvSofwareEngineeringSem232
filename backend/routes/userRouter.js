@@ -1,14 +1,8 @@
 import express from "express";
+import { CreateUser } from "../controller/userController.js";
 
 const UserRouter = express.Router();
 
-UserRouter.get('/', async (req, res) => {
-    try {
-        req.body
-    } catch (error) {
-        console.log(error)
-        res.status(500).json(error);
-    }
-});
+UserRouter.post('/register', CreateUser);
 
 export default UserRouter;
