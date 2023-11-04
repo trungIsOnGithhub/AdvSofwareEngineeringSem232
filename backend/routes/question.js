@@ -28,7 +28,9 @@ router.post('/', async (req, res) => {
     }
     catch (err) {
         console.log(err);
-        res.status(400).json(err);
+        res.status(400).json({
+            message: "Create question failed"
+        });
     }
     res.status(201).json(questions);
 });
@@ -38,13 +40,15 @@ router.put('/:id', async (req, res) => {
         const question = await Question.findByIdAndUpdate(
             req.params.id,
             req.body,
-            { upsert: true, new: true, setDefaultsOnInsert: true }
+            { new: true }
         ).lean().exec();
         res.status(200).json(question);
     }
     catch (err) {
         console.log(err);
-        req.status(400).json(err);
+        req.status(400).json({
+            message: "Update question failed"
+        });
     }
 });
 
