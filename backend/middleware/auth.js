@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 import argon2 from 'argon2';
 import * as jose from 'jose'
 import crypto from 'node:crypto';
-import {privateKey, publicKey} from "../config/loadKeyPair.js";
+//import {privateKey, publicKey} from "../config/loadKeyPair.js";
 
 dotenv.config()
 
@@ -21,23 +21,11 @@ class Authentication {
 
     static async createToken(payload) {
         payload["padding"] = crypto.randomBytes(48).toString('base64');
-        return new jose.SignJWT(payload)
-       .setProtectedHeader({ alg: "EdDSA" }) //Ed25519
-       .setExpirationTime('12h')
-       .setNotBefore('0.1s')
-       .sign(privateKey);
+        return payload;
     }
 
     static async verifyToken(token) {
-        try {
-            const { payload, protectedHeader } = await jose.jwtVerify(token, publicKey, {
-                algorithms: ["EdDSA"]
-            });
-            return payload;
-        } catch (err) {
-            console.log(err)
-            return {"error": "invalid token"}
-        }
+        return token;
     }
 }
 
