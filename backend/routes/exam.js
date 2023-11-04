@@ -2,7 +2,7 @@ import express from "express";
 
 const router = express.Router();
 
-router.get('/exam', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         res.json("Exam");
     } catch (error) {
@@ -11,4 +11,4 @@ router.get('/exam', async (req, res) => {
     }
 });
 
-module.exports = router;
+export default router;

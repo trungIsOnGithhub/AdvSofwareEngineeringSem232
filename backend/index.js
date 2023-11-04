@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import mongoose from 'mongoose';
+import examRoute from './routes/exam.js';
 
 dotenv.config();
 
@@ -9,7 +10,6 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const examRoute = require("./routes/exam");
 
 app.use('/api/exam', examRoute);
 
