@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import examRoute from './routes/exam.js';
+import UserRouter from './routes/userRouter.js';
 
 dotenv.config();
 
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use('/api/exam', examRoute);
+app.use('/api/user', UserRouter);
 
 mongoose.connect(process.env.MONGO_URL)
     .then(() => {
