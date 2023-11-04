@@ -1,4 +1,4 @@
-require("dotenv").config();
+import "dotenv/config.js";
 import fs from 'fs';
 import crypto from 'node:crypto';
 
@@ -15,5 +15,5 @@ const { publicKey, privateKey } = crypto.generateKeyPairSync('ed25519', {
         passphrase: String(process.env.KEY_PASS),
     }});
 
-fs.writeFileSync("./privateKey.pem", privateKey);
-fs.writeFileSync("./publicKey.pem", publicKey);
+fs.writeFileSync("./backend/privateKey.pem", privateKey);
+fs.writeFileSync("./backend/publicKey.pem", publicKey);
