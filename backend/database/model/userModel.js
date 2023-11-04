@@ -24,9 +24,9 @@ class UserModel {
     static async insertUser(name, hashPassword, email) {
         try {
             const uidGen = new Snowflake();
-            result = await userMongoModel.create({
+            let result = await userMongoModel.create({
                 _id: uidGen.getUniqueID(),
-                name: name,
+                username: name,
                 password: hashPassword,
                 email: email,
                 role: "student"

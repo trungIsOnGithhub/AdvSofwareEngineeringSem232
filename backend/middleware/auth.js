@@ -1,8 +1,10 @@
-require("dotenv").config();
+import dotenv from 'dotenv';
 import argon2 from 'argon2';
 import * as jose from 'jose'
 import crypto from 'node:crypto';
-import {privateKey, publicKey} from "../config/loadKeyPair";
+import {privateKey, publicKey} from "../config/loadKeyPair.js";
+
+dotenv.config()
 
 class Authentication {
     static async hashPassword(password) {
