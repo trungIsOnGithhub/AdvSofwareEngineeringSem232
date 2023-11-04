@@ -1,4 +1,5 @@
 import examModel from "../database/model/examModel.js";
+import UserModel from "../database/model/userModel.js";
 
 export const getExam = async (req, res) => {
     try {
@@ -16,6 +17,13 @@ export const createExam = async (req, res) => {
             return res.status(500).json({
                 message: 'Missing input!',
                 status: 500
+            })
+        }
+
+        const findTeacher = await UserModel.find({ id: req.body.userId });
+        if (!findTeacher) {
+            return res.status(404).json({
+                message: 'Not found teacher'
             })
         }
         const exam = new examModel({ name: req.body.name, password: req.body.password });
