@@ -1,6 +1,26 @@
 import examModel from "../database/model/examModel.js";
 import UserModel from "../database/model/userModel.js";
 
+let exams = [ {name: "Bai Kiem tra 1", password: "1234", owner:"user1"} ];
+let users = [
+    { _id: "dj183u21uq", username: "user1", password: "1234", email: "aa@aa.aa", role: "teacher" },
+    { _id: "dj3218290d", username: "user2", password: "1234", email: "bb@bb.bb", role: "student" }
+];
+// FOR TESTING
+
+export const getExamByTeacherUsername = async (req, res) => {
+    try {
+        const reqUsername = req.params.user;
+        console.log(username);
+        const exam = await examModel.find({username: reqUsername});
+
+        return res.status(200).json(exam);
+    } catch (error) {
+        console.log(error)
+        res.status(500).json(error.message);
+    }
+}
+
 export const getExam = async (req, res) => {
     try {
         const findAllExam = await examModel.find();

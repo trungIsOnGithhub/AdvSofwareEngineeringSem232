@@ -3,8 +3,8 @@ import { createExam, getExam } from "../controller/examController.js";
 
 const router = express.Router();
 
-router.get('/', getExam);
-router.post('/', createExam)
+router.get('/exam/:user', getExam);
+router.post('/exam', createExam)
 
 
 
