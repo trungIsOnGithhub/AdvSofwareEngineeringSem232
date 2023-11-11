@@ -9,7 +9,8 @@ const Product = require('./models/productModel')
 const User = require('./models/user')
 const Exam = require('./models/exam');
 
-const authenticateToken = require('./middleWare/authenticateToken')
+const authenticateToken = require('./middleWare/authenticateToken');
+const Submit = require('./models/submitModal');
 
 const app = express()
 const router = express.Router();
@@ -302,6 +303,31 @@ app.delete('/exams/:id/questions/:questionId', async (req, res) => {
     res.status(500).json({ message: 'Internal Server Error' });
   }
 });
+
+app.post('/exam/submit', async(req,res)=>{
+  try {
+    let exam = await Exam.findById(req.body.examId);
+    let user = await User.findById(req.body.userId);
+    let score = req.body.score;
+    const submit = await Submit.create({examId: exam, userId: user, score});
+    res.json(submit);
+} catch (e) {
+    return res.status(500).json(e.message)
+}
+})
+
+app.get('/exam/:id', async (req, res) => {
+  let submits = await Submit.find({examId: req.params.id});
+  const r = [];
+  for(let i =0; i<submits.length; i++){
+        const user = await User.findById(submits[i].userId);
+        console.log(user);
+        r.push({key: i+1, name: user.fullname, score: submits[i].score, email: user.email, time: submits[i].createdAt});
+  }
+  console.log(r);
+  res.json(r)
+})
+
 app.post('/product', async(req,res)=>{
     try{
         const product = await Product.create(req.body)
