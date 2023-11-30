@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const cors = require('cors');
 
 const Product = require('./models/productModel')
-const User = require('./models/user')
+const User = require('./models/user');
 const Exam = require('./models/exam');
 
 const authenticateToken = require('./middleWare/authenticateToken');
@@ -43,6 +43,10 @@ app.get('/blog',(req,res)=>{
     res.send('This is blog')
 })
 
+async function hash(password) {
+  const saltRounds = 10;
+  return await bcrypt.hash(password, saltRounds);
+}
 app.post('/register', async (req, res) => {
     const { fullname, email, password, role } = req.body;
   
@@ -53,10 +57,9 @@ app.post('/register', async (req, res) => {
       return res.status(400).json({ error: 'Username is already taken' });
     }
   
-    const saltRounds = 10;
-    const hashedPassword = await bcrypt.hash(password, saltRounds);
+    const hashedPassword = await hash(password);
   
-    const user = new User({ fullname, email, password: hashedPassword,role });
+    const user = new User({ fullname, email, password: hashedPassword, role });
   
     try {
       await user.save();
@@ -67,8 +70,12 @@ app.post('/register', async (req, res) => {
   });
   
 // Login endpoint
+async function compare(passwordInput, userPassword) {
+  return await bcrypt.compare(passwordInput, userPassword);
+}
 app.post('/login', async (req, res) => {
     const { email, password } = req.body;
+
     const secret = '33e63cdbf2c1b7c12bdef634d08f82bedc42a252963dfade0401af3c354cf3fa'
     // console.log(secret)
     const user = await User.findOne({ email });
@@ -77,9 +84,7 @@ app.post('/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
   
-    const isPasswordValid = await bcrypt.compare(password, user.password);
-  
-    if (!isPasswordValid) {
+    if (!(await compare(password, user.password))) {
       return res.status(401).json({ 'error': 'Invalid credentials' });
     }
   
@@ -396,9 +401,14 @@ app.listen(5000, ()=>{
 
 
 // connect to mongodb
-mongoose.connect('mongodb+srv://phanhoangphuc03111:phuc1755@cluster0.b576f71.mongodb.net/API-NODE?retryWrites=true&w=majority')
-.then(()=>{
-    console.log('connected to MongoDB')
-}).catch((error)=>{
-    console.log(error)
-})
+// mongoose.connect('mongodb+srv://phanhoangphuc03111:phuc1755@cluster0.b576f71.mongodb.net/API-NODE?retryWrites=true&w=majority')
+// .then(()=>{
+//     console.log('connected to MongoDB')
+// }).catch((error)=>{
+//     console.log(error)
+// })
+
+module.exports = {
+  hash,
+  compare
+}
