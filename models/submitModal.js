@@ -7,9 +7,9 @@ const submitSchema = new mongoose.Schema({
     required: true
   },
   userId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-    },
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
     score: String
 }, {timestamps : true});
 
