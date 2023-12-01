@@ -82,19 +82,19 @@ app.post('/login', async (req, res) => {
 
     const secret = '33e63cdbf2c1b7c12bdef634d08f82bedc42a252963dfade0401af3c354cf3fa'
     // console.log(secret)
-    // const user = await User.findOne({ email });
+    const user = await User.findOne({ email });
   
-    // if (!user) {
-    //   return res.status(401).json({ error: 'Invalid credentials' });
-    // }
+    if (!user) {
+      return res.status(401).json({ error: 'Invalid credentials' });
+    }
   
-    // if (!(await compare(password, user.password))) {
-    //   return res.status(401).json({ 'error': 'Invalid credentials' });
-    // }
+    if (!(await compare(password, user.password))) {
+      return res.status(401).json({ 'error': 'Invalid credentials' });
+    }
   
     const token = jwt.sign({  email: email }, secret);
     // console.log(token)
-    res.status(200).json({ token   });
+    res.status(200).json({ token, user  });
   });
 
 // Middleware for token authentication
@@ -405,12 +405,12 @@ app.listen(5000, ()=>{
 
 
 // connect to mongodb
-// mongoose.connect('mongodb+srv://phanhoangphuc03111:phuc1755@cluster0.b576f71.mongodb.net/API-NODE?retryWrites=true&w=majority')
-// .then(()=>{
-//     console.log('connected to MongoDB')
-// }).catch((error)=>{
-//     console.log(error)
-// })
+mongoose.connect('mongodb+srv://phanhoangphuc03111:phuc1755@cluster0.b576f71.mongodb.net/API-NODE?retryWrites=true&w=majority')
+.then(()=>{
+    console.log('connected to MongoDB')
+}).catch((error)=>{
+    console.log(error)
+})
 
 module.exports = {
   hash,

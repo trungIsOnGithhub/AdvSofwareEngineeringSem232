@@ -89,7 +89,7 @@
                 <canvas id="test-suites-canvas" width="100" height="100"></canvas>
                 <h2>Test Suites</h2>
                 <div class="list-group">
-                    <p id="test-suites-results" class="list-group-item list-group-item-action">1 passed, 2 total</p>
+                    <p id="test-suites-results" class="list-group-item list-group-item-action">1 passed, 1 total</p>
                 </div>
             </div>
             <!-- /.col-lg-4 -->
@@ -97,7 +97,7 @@
                 <canvas id="tests-canvas" width="100" height="100"></canvas>
                 <h2>Tests</h2>
                 <div class="list-group">
-                    <p id="tests-results" class="list-group-item list-group-item-action">3 passed, 3 total</p>
+                    <p id="tests-results" class="list-group-item list-group-item-action">9 passed, 9 total</p>
                 </div>
             </div>
             <!-- /.col-lg-4 -->
@@ -125,16 +125,16 @@
 }</div>
         <div id="accordion">
             <div class="d-none" id="test-results">{
-  &quot;numFailedTestSuites&quot;: 1,
+  &quot;numFailedTestSuites&quot;: 0,
   &quot;numFailedTests&quot;: 0,
   &quot;numPassedTestSuites&quot;: 1,
-  &quot;numPassedTests&quot;: 3,
+  &quot;numPassedTests&quot;: 9,
   &quot;numPendingTestSuites&quot;: 0,
   &quot;numPendingTests&quot;: 0,
-  &quot;numRuntimeErrorTestSuites&quot;: 1,
+  &quot;numRuntimeErrorTestSuites&quot;: 0,
   &quot;numTodoTests&quot;: 0,
-  &quot;numTotalTestSuites&quot;: 2,
-  &quot;numTotalTests&quot;: 3,
+  &quot;numTotalTestSuites&quot;: 1,
+  &quot;numTotalTests&quot;: 9,
   &quot;openHandles&quot;: [],
   &quot;snapshot&quot;: {
     &quot;added&quot;: 0,
@@ -152,21 +152,21 @@
     &quot;unmatched&quot;: 0,
     &quot;updated&quot;: 0
   },
-  &quot;startTime&quot;: 1701348642813,
+  &quot;startTime&quot;: 1701423158263,
   &quot;success&quot;: false,
   &quot;testResults&quot;: [
     {
       &quot;leaks&quot;: false,
       &quot;numFailingTests&quot;: 0,
-      &quot;numPassingTests&quot;: 3,
+      &quot;numPassingTests&quot;: 9,
       &quot;numPendingTests&quot;: 0,
       &quot;numTodoTests&quot;: 0,
       &quot;openHandles&quot;: [],
       &quot;perfStats&quot;: {
-        &quot;end&quot;: 1701348643740,
-        &quot;runtime&quot;: 845,
+        &quot;end&quot;: 1701423159654,
+        &quot;runtime&quot;: 1255,
         &quot;slow&quot;: false,
-        &quot;start&quot;: 1701348642895
+        &quot;start&quot;: 1701423158399
       },
       &quot;skipped&quot;: false,
       &quot;snapshot&quot;: {
@@ -184,80 +184,139 @@
           &quot;ancestorTitles&quot;: [
             &quot;Testing POST: &#x2F;login&quot;
           ],
-          &quot;duration&quot;: 112,
+          &quot;duration&quot;: 461,
           &quot;failureDetails&quot;: [],
           &quot;failureMessages&quot;: [],
-          &quot;fullName&quot;: &quot;Testing POST: &#x2F;login Should test student login Number 01&quot;,
+          &quot;fullName&quot;: &quot;Testing POST: &#x2F;login Test get response data |Number 1|--|Email: teacher@gmail.com|--|Password: teacher|--|Desired Output: Wrong Credentials!!|&quot;,
           &quot;invocations&quot;: 1,
           &quot;location&quot;: null,
-          &quot;numPassingAsserts&quot;: 3,
+          &quot;numPassingAsserts&quot;: 0,
           &quot;retryReasons&quot;: [],
           &quot;status&quot;: &quot;passed&quot;,
-          &quot;title&quot;: &quot;Should test student login Number 01&quot;
+          &quot;title&quot;: &quot;Test get response data |Number 1|--|Email: teacher@gmail.com|--|Password: teacher|--|Desired Output: Wrong Credentials!!|&quot;
         },
         {
           &quot;ancestorTitles&quot;: [
             &quot;Testing POST: &#x2F;login&quot;
           ],
-          &quot;duration&quot;: 40,
+          &quot;duration&quot;: 2,
           &quot;failureDetails&quot;: [],
           &quot;failureMessages&quot;: [],
-          &quot;fullName&quot;: &quot;Testing POST: &#x2F;login Should test student login Number 11&quot;,
+          &quot;fullName&quot;: &quot;Testing POST: &#x2F;login Start test Data |Email: teacher@gmail.com| |Password: teacher|&quot;,
           &quot;invocations&quot;: 1,
           &quot;location&quot;: null,
-          &quot;numPassingAsserts&quot;: 3,
+          &quot;numPassingAsserts&quot;: 1,
           &quot;retryReasons&quot;: [],
           &quot;status&quot;: &quot;passed&quot;,
-          &quot;title&quot;: &quot;Should test student login Number 11&quot;
+          &quot;title&quot;: &quot;Start test Data |Email: teacher@gmail.com| |Password: teacher|&quot;
         },
         {
           &quot;ancestorTitles&quot;: [
             &quot;Testing POST: &#x2F;login&quot;
           ],
-          &quot;duration&quot;: 41,
+          &quot;duration&quot;: 1,
           &quot;failureDetails&quot;: [],
           &quot;failureMessages&quot;: [],
-          &quot;fullName&quot;: &quot;Testing POST: &#x2F;login Should test student login Number 21&quot;,
+          &quot;fullName&quot;: &quot;Testing POST: &#x2F;login 1: Should test response body available&quot;,
           &quot;invocations&quot;: 1,
           &quot;location&quot;: null,
-          &quot;numPassingAsserts&quot;: 3,
+          &quot;numPassingAsserts&quot;: 1,
           &quot;retryReasons&quot;: [],
           &quot;status&quot;: &quot;passed&quot;,
-          &quot;title&quot;: &quot;Should test student login Number 21&quot;
+          &quot;title&quot;: &quot;1: Should test response body available&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Testing POST: &#x2F;login&quot;
+          ],
+          &quot;duration&quot;: 2,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Testing POST: &#x2F;login 2: Should test response status matched&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 1,
+          &quot;retryReasons&quot;: [],
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;2: Should test response status matched&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Testing POST: &#x2F;login&quot;
+          ],
+          &quot;duration&quot;: 1,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Testing POST: &#x2F;login 3: Should test response body error message available if fail&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 1,
+          &quot;retryReasons&quot;: [],
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;3: Should test response body error message available if fail&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Testing POST: &#x2F;login&quot;
+          ],
+          &quot;duration&quot;: 1,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Testing POST: &#x2F;login 4: Should test response body token message available if success&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 0,
+          &quot;retryReasons&quot;: [],
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;4: Should test response body token message available if success&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Testing POST: &#x2F;login&quot;
+          ],
+          &quot;duration&quot;: 1,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Testing POST: &#x2F;login 5: Should test response body error message match if fail&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 1,
+          &quot;retryReasons&quot;: [],
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;5: Should test response body error message match if fail&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Testing POST: &#x2F;login&quot;
+          ],
+          &quot;duration&quot;: 1,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Testing POST: &#x2F;login 6: Should test whether response data matched if success!&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 0,
+          &quot;retryReasons&quot;: [],
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;6: Should test whether response data matched if success!&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;Testing POST: &#x2F;login&quot;
+          ],
+          &quot;duration&quot;: 1,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;Testing POST: &#x2F;login 7: Should for Allow Header Authorization in response!&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 1,
+          &quot;retryReasons&quot;: [],
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;7: Should for Allow Header Authorization in response!&quot;
         }
       ],
       &quot;failureMessage&quot;: null
-    },
-    {
-      &quot;failureMessage&quot;: &quot;  \u001b[1m● \u001b[22mTest suite failed to run\n\n    Your test suite must contain at least one test.\n\n      \u001b[2mat onResult (\u001b[22mnode_modules&#x2F;@jest&#x2F;core&#x2F;build&#x2F;TestScheduler.js\u001b[2m:133:18)\u001b[22m\n      \u001b[2mat \u001b[22mnode_modules&#x2F;@jest&#x2F;core&#x2F;build&#x2F;TestScheduler.js\u001b[2m:254:19\u001b[22m\n      \u001b[2mat \u001b[22mnode_modules&#x2F;emittery&#x2F;index.js\u001b[2m:363:13\u001b[22m\n          at Array.map (&lt;anonymous&gt;)\n      \u001b[2mat Emittery.emit (\u001b[22mnode_modules&#x2F;emittery&#x2F;index.js\u001b[2m:361:23)\u001b[22m\n&quot;,
-      &quot;leaks&quot;: false,
-      &quot;numFailingTests&quot;: 0,
-      &quot;numPassingTests&quot;: 0,
-      &quot;numPendingTests&quot;: 0,
-      &quot;numTodoTests&quot;: 0,
-      &quot;openHandles&quot;: [],
-      &quot;perfStats&quot;: {
-        &quot;end&quot;: 0,
-        &quot;runtime&quot;: 0,
-        &quot;slow&quot;: false,
-        &quot;start&quot;: 0
-      },
-      &quot;skipped&quot;: false,
-      &quot;snapshot&quot;: {
-        &quot;added&quot;: 0,
-        &quot;fileDeleted&quot;: false,
-        &quot;matched&quot;: 0,
-        &quot;unchecked&quot;: 0,
-        &quot;uncheckedKeys&quot;: [],
-        &quot;unmatched&quot;: 0,
-        &quot;updated&quot;: 0
-      },
-      &quot;testExecError&quot;: {
-        &quot;message&quot;: &quot;Your test suite must contain at least one test.&quot;,
-        &quot;stack&quot;: &quot;Error: Your test suite must contain at least one test.\n    at onResult (C:\\Users\\Administrator\\Downloads\\SCRUM_TESTCLASS\\node_modules\\@jest\\core\\build\\TestScheduler.js:133:18)\n    at C:\\Users\\Administrator\\Downloads\\SCRUM_TESTCLASS\\node_modules\\@jest\\core\\build\\TestScheduler.js:254:19\n    at C:\\Users\\Administrator\\Downloads\\SCRUM_TESTCLASS\\node_modules\\emittery\\index.js:363:13\n    at Array.map (&lt;anonymous&gt;)\n    at Emittery.emit (C:\\Users\\Administrator\\Downloads\\SCRUM_TESTCLASS\\node_modules\\emittery\\index.js:361:23)&quot;
-      },
-      &quot;testFilePath&quot;: &quot;C:\\Users\\Administrator\\Downloads\\SCRUM_TESTCLASS\\__test__\\authenticateToken.test.js&quot;,
-      &quot;testResults&quot;: []
     }
   ],
   &quot;wasInterrupted&quot;: false
@@ -307,7 +366,7 @@
   ],
   &quot;rootDir&quot;: &quot;C:\\Users\\Administrator\\Downloads\\SCRUM_TESTCLASS&quot;,
   &quot;runTestsByPath&quot;: false,
-  &quot;seed&quot;: 288015507,
+  &quot;seed&quot;: -1395661338,
   &quot;skipFilter&quot;: false,
   &quot;snapshotFormat&quot;: {
     &quot;escapeString&quot;: false,
