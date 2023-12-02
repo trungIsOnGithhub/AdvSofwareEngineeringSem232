@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --reporters default jest-stare --coverage --detectOpenHandles --runInBand --testTimeout=6000",
+    "test-ui-window": "cd .\\__test__\\testUI && .\\Scripts\\activate.bat && python script.py && deactivate",
+    "test": "jest --reporters default jest-stare --coverage --detectOpenHandles --runInBand --testTimeout=6000 && python ./__test__/testUI/script.py",
     "test:watch": "jest --verbose --watchAll",
     "serve": "node server.js",
     "dev": "nodemon server.js"

@@ -1,31 +1,10 @@
 const jwt = require('jsonwebtoken');
+const testLoginData = require("./testUI/data.json");
 const requester = require('./commonTest').requester;
 
 const TESTING_ENDPOINT = "/login";
 
 ACCESS_TOKEN_SECRET = "33e63cdbf2c1b7c12bdef634d08f82bedc42a252963dfade0401af3c354cf3fa";
-
-const testLoginData = [
-    {
-        email: "teacher@gmail.com",
-        password: "teacher",
-        fullname: "Phuc",
-        desiredOutput: "Wrong Credentials!!",
-        desiredStatus: 401
-    },
-    // {
-    //     email: "teacher@gmail.com",
-    //     password: "teacher",
-    //     desiredOutput: "Wrong Credentials!!",
-    //     desiredStatus: 401
-    // },
-    // {
-    //     email: "hai@gmail.com",
-    //     password: "hai69",
-    //     desiredOutput: "Wrong Credentials!!",
-    //     desiredStatus: 401
-    // },
-];
 
 describe(`Testing POST: ${TESTING_ENDPOINT}`, function() {
     let response = null;

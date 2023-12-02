@@ -1,0 +1,28 @@
+[
+    {
+        "email": "aa@aa.aa",
+        "password": "1234",
+        "role": "student",
+        "fullname": "AAAAA",
+        "desiredOutput": "Login Failed with student!!",
+        "desiredStatus": 200,
+        "isValidCredential": true
+    },
+    {
+        "email": "aa@aa.aa",
+        "password": "1234",
+        "role": "teacher",
+        "fullname": "AAAAA",
+        "desiredOutput": "Login OK with teacher!!",
+        "desiredStatus": 200,
+        "isValidCredential": true
+    },
+    {
+        "email": "trung@gmail.com",
+        "password": "hihi",
+        "role": "student",
+        "desiredOutput": "Wrong Credentials!!",
+        "desiredStatus": 400,
+        "isValidCredential": false
+    }
+]
