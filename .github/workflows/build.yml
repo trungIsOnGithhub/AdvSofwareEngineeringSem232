@@ -1,0 +1,20 @@
+on:
+  pull_request:
+    branches:
+    - main
+    - backend
+  push:
+    branches:
+    - main
+    - backend
+  workflow_dispatch:
+jobs:
+  vuive:
+    runs-on: ubuntu-latest
+    container: node:18
+    steps:
+      - run: node --version
+      - run: npm --version
+      - uses: actions/checkout@v3
+      - run: npm i
+      - run: npm run test
