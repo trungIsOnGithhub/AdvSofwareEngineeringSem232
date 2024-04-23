@@ -3,4 +3,14 @@
 
 ###### About Low-Code Platform - Example with Oracle Apex Platform
 
+1. Start with main App Builder Tools Menu:
+
+![App Builder Main Menu](./imgs/app-builder-main-menu.png)
+
+We also has SQL Workshop to work with Database.
+
+2.  We select Create App and Choose our Type of Application to Create:
+
+![Create App Main Menu](./imgs/create-app-menu.png)
+
 > [app demo](https://apex.oracle.com/pls/apex/r/trungusingoracleapex/world-population)
