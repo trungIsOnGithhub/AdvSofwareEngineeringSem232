@@ -14,6 +14,11 @@ We also has SQL Workshop to work with Database.
 ![Create App Main Menu](./imgs/create-app-menu.png)
 
 
+> [App Demo Link - SQL Source App](https://apex.oracle.com/pls/apex/r/trungusingoracleapex/apex-social-media194544)
+
+> [App Demo Link - Excel App](https://apex.oracle.com/pls/apex/r/trungusingoracleapex/world-population)
+
+
 ### [LiveLab - Build a Social Media App](https://apex.oracle.com/go/sm-lab)
 
 
@@ -21,7 +26,3 @@ We also has SQL Workshop to work with Database.
 - Learn how to use Quick SQL
 - Learn how to use a Form and a Cards Region including Dialogs
 - Learn to work with BLOBs, Dynamic Actions and Custom Events
-
-> [App Demo Link](https://apex.oracle.com/pls/apex/r/trungusingoracleapex/social-app-sample-lab)
-
-> [App Demo Link](https://apex.oracle.com/pls/apex/r/trungusingoracleapex/world-population)
